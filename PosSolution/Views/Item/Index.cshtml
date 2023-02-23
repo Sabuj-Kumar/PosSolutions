@@ -1,0 +1,52 @@
+﻿@model PosSolution.Models.ItemModel
+
+
+@{
+    ViewData["Title"] = "Item Page";
+}
+<h1>Item Page</h1>
+
+<div class="row" style="border-style: solid;border-width: 1px;">
+    <div style="margin-left:20px;display:flex;text-align: center;">
+        <h3>Date</h3>
+    </div>
+    <div>
+
+    </div>
+    <div style="width: 900px; height:100px; padding: 20px; margin-left: 20px">
+        <form asp-action="Create" style="text-align: center" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="margin-bottom:20px;margin-left:20px;display:flex;text-align: start;">
+                <label asp-for="item" class="control-label" stytle="width:80px;"></label>
+                <select id="item" name="item" stytle="margin-left:20px;text-align:center;width:80px;">
+                    <option value="NSP Exercise Book 80 pgs">NSP Exercise Book 80 pgs</option>
+                    <option value="NSP Exercise Book 120 pgs">NSP Exercise Book 120 pgs</option>
+                    <option value="NSP Exercise Book 160 pgs">NSP Exercise Book 160 pgs</option>
+                    <option value="NSP Exercise Book 200 pgs">NSP Exercise Book 200 pgs</option>
+                </select>
+                <span asp-validation-for="item" class="text-danger"></span>
+                <label asp-for="quantity" class="control-label" style="margin-left:20px;height:30px;width:80px;text-align:start;"></label>
+                <input style="margin-right:20px;height:30px;width:100px;text-align:start;" asp-for="quantity" class="form-control" />
+                <span asp-validation-for="quantity" class="text-danger"></span>
+                <label asp-for="price" class="control-label"></label>
+                <input style="margin-left:20px;margin-right:20px;height:30px;width:100px;text-align:start;" asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+                <label asp-for="amount" class="control-label"></label>
+                <input style="margin-left:20px;margin-right:20px;height:30px;width:100px;text-align:start;" asp-for="amount" class="form-control" />
+                <span asp-validation-for="amount" class="text-danger"></span>
+            </div>
+           
+            <div>
+                <div class="form-group" style="margin-left:20px;margin-right:20px;height:30px;text-align:right;">
+                <button type="submit" style="border-radius: 4px;background-color:green;color:white;border: none;padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;"> Add to bill</button>
+                <button type="reset" style="border-radius: 4px;background-color:green;color:white;border: none;padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;"> Reset </button>           
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

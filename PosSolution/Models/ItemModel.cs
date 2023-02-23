@@ -12,7 +12,7 @@ namespace PosSolution.Models
         public string item { get; set; }
         [Required(ErrorMessage = "Enter Quentity Please")]
         [DisplayName("Quentity")]
-        public int quentity { get; set; }
+        public int quantity { get; set; }
         [Required(ErrorMessage = "Enter Price Please")]
         [DisplayName("Price")]
         public float price { get; set; }
@@ -20,4 +20,5 @@ namespace PosSolution.Models
         [Display(Name = "Amount")]
         public float amount { get; set; }
     }
+
 }
